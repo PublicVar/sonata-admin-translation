@@ -285,34 +285,34 @@ fos_elastica:
                         provider: ~
 
                 # Ecommerce Bundle
-                product:
-                    serializer:   { groups: ['sonata_search'] }
-                    mappings:
-                        name:     { boost: 5 }
-                    persistence:
-                        model:    Application\Sonata\ProductBundle\Entity\Product
-                        provider: ~
+                # product:
+                #     serializer:   { groups: ['sonata_search'] }
+                #     mappings:
+                #         name:     { boost: 5 }
+                #     persistence:
+                #         model:    Application\Sonata\ProductBundle\Entity\Product
+                #         provider: ~
 
-                order:
-                    serializer:   { groups: ['sonata_search'] }
-                    mappings:
-                        name:     { boost: 5 }
-                    persistence:
-                        model:    Application\Sonata\OrderBundle\Entity\Order
-                        provider: ~
-
-                invoice:
-                    serializer:   { groups: ['sonata_search'] }
-                    mappings:
-                        name:     { boost: 5 }
-                    persistence:
-                        model:    Application\Sonata\InvoiceBundle\Entity\Invoice
-                        provider: ~
-
-                transaction:
-                    serializer:   { groups: ['sonata_search'] }
-                    mappings:
-                        name:     { boost: 5 }
-                    persistence:
-                        model:    Application\Sonata\PaymentBundle\Entity\Transaction
-                        provider: ~
+                # order:
+                #     serializer:   { groups: ['sonata_search'] }
+                #     mappings:
+                #         name:     { boost: 5 }
+                #     persistence:
+                #         model:    Application\Sonata\OrderBundle\Entity\Order
+                #         provider: ~
+                #
+                # invoice:
+                #     serializer:   { groups: ['sonata_search'] }
+                #     mappings:
+                #         name:     { boost: 5 }
+                #     persistence:
+                #         model:    Application\Sonata\InvoiceBundle\Entity\Invoice
+                #         provider: ~
+                #
+                # transaction:
+                #     serializer:   { groups: ['sonata_search'] }
+                #     mappings:
+                #         name:     { boost: 5 }
+                #     persistence:
+                #         model:    Application\Sonata\PaymentBundle\Entity\Transaction
+                #         provider: ~

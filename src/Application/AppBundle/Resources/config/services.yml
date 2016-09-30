@@ -1,0 +1,9 @@
+services:
+#    application_app.example:
+#        class: Application\AppBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+    application_app.admin.param_name:
+        class: Application\AppBundle\Admin\ParamNameAdmin
+        arguments: [~, Application\AppBundle\Entity\ParamName, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: sonata_content, label: ParamName}

@@ -73,7 +73,7 @@ class AppKernel extends Kernel
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
 
             // E-COMMERCE
-            new Sonata\BasketBundle\SonataBasketBundle(),
+          /*  new Sonata\BasketBundle\SonataBasketBundle(),
             new Application\Sonata\BasketBundle\ApplicationSonataBasketBundle(),
             new Sonata\CustomerBundle\SonataCustomerBundle(),
             new Application\Sonata\CustomerBundle\ApplicationSonataCustomerBundle(),
@@ -88,10 +88,11 @@ class AppKernel extends Kernel
             new Sonata\ProductBundle\SonataProductBundle(),
             new Application\Sonata\ProductBundle\ApplicationSonataProductBundle(),
             new Sonata\PriceBundle\SonataPriceBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new Application\Sonata\CommentBundle\ApplicationSonataCommentBundle(),*/
             new FOS\CommentBundle\FOSCommentBundle(),
             new Sonata\CommentBundle\SonataCommentBundle(),
             new Application\Sonata\CommentBundle\ApplicationSonataCommentBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle($this),
 
             // SONATA CORE & HELPER BUNDLES
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
@@ -115,15 +116,17 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
 
             // DEMO and QA - Can be deleted
-            new Sonata\Bundle\DemoBundle\SonataDemoBundle(),
-            new Sonata\Bundle\QABundle\SonataQABundle(),
+            // new Sonata\Bundle\DemoBundle\SonataDemoBundle(),
+            // new Sonata\Bundle\QABundle\SonataQABundle(),
 
             // Disable this if you don't want the timeline in the admin
             new Spy\TimelineBundle\SpyTimelineBundle(),
             new Sonata\TimelineBundle\SonataTimelineBundle(),
             new Application\Sonata\TimelineBundle\ApplicationSonataTimelineBundle(), // easy extends integration
 
-            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle()
+            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
+            new Application\AppBundle\ApplicationAppBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

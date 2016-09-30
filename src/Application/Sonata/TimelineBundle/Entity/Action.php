@@ -37,4 +37,24 @@ class Action extends BaseAction
     {
         return $this->id;
     }
+
+    /**
+     * Remove actionComponents
+     *
+     * @param \Application\Sonata\TimelineBundle\Entity\ActionComponent $actionComponents
+     */
+    public function removeActionComponent(\Application\Sonata\TimelineBundle\Entity\ActionComponent $actionComponents)
+    {
+        $this->actionComponents->removeElement($actionComponents);
+    }
+
+    /**
+     * Remove timelines
+     *
+     * @param \Application\Sonata\TimelineBundle\Entity\Timeline $timelines
+     */
+    public function removeTimeline(\Application\Sonata\TimelineBundle\Entity\Timeline $timelines)
+    {
+        $this->timelines->removeElement($timelines);
+    }
 }

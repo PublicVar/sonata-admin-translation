@@ -37,4 +37,50 @@ class Post extends BasePost
     {
         return $this->id;
     }
+
+    /**
+     * Add comments
+     *
+     * @param \Application\Sonata\NewsBundle\Entity\Comment $comments
+     * @return Post
+     */
+    public function addComment(\Application\Sonata\NewsBundle\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \Application\Sonata\NewsBundle\Entity\Comment $comments
+     */
+    public function removeComment(\Application\Sonata\NewsBundle\Entity\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Add tags
+     *
+     * @param \Application\Sonata\ClassificationBundle\Entity\Tag $tags
+     * @return Post
+     */
+    public function addTag(\Application\Sonata\ClassificationBundle\Entity\Tag $tags)
+    {
+        $this->tags[] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Remove tags
+     *
+     * @param \Application\Sonata\ClassificationBundle\Entity\Tag $tags
+     */
+    public function removeTag(\Application\Sonata\ClassificationBundle\Entity\Tag $tags)
+    {
+        $this->tags->removeElement($tags);
+    }
 }

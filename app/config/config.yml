@@ -48,7 +48,7 @@ imports:
 framework:
     #esi:                   ~
     translator:
-        fallback:           [fr,en,es]
+        fallback:           fr
     secret:                 %secret%
     router:
         resource:           "%kernel.root_dir%/config/routing.yml"
@@ -110,6 +110,11 @@ doctrine:
             default:
                 auto_mapping: true
                 mappings: ~
+                # New custom filter
+                filters:
+                    oneLocale:
+                        class: A2lix\I18nDoctrineBundle\Doctrine\ORM\Filter\OneLocaleFilter
+                        enabled: true
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -151,3 +156,13 @@ sensio_framework_extra:
     view:    { annotations: false }
     router:  { annotations: true }
     request: { converters:  true }
+
+a2lix_translation_form:
+    locale_provider: default       # [1]
+    locales: [en, fr, es, de]      # [1-a]
+    default_locale: fr             # [1-b]
+    required_locales: [fr,en]         # [1-c]
+    templating: "A2lixTranslationFormBundle::default.html.twig"      # [2]
+
+a2lix_i18n_doctrine:
+    manager_registry: doctrine

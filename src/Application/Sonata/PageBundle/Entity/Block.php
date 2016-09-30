@@ -36,4 +36,27 @@ class Block extends BaseBlock
     {
         return $this->id;
     }
+
+    /**
+     * Add children
+     *
+     * @param \Application\Sonata\PageBundle\Entity\Block $children
+     * @return Block
+     */
+    public function addChild(\Application\Sonata\PageBundle\Entity\Block $children)
+    {
+        $this->children[] = $children;
+
+        return $this;
+    }
+
+    /**
+     * Remove children
+     *
+     * @param \Application\Sonata\PageBundle\Entity\Block $children
+     */
+    public function removeChild(\Application\Sonata\PageBundle\Entity\Block $children)
+    {
+        $this->children->removeElement($children);
+    }
 }

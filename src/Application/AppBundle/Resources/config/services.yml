@@ -7,3 +7,9 @@ services:
         arguments: [~, Application\AppBundle\Entity\ParamName, SonataAdminBundle:CRUD]
         tags:
             - {name: sonata.admin, manager_type: orm, group: sonata_content, label: ParamName}
+
+    application_app.admin.param_type:
+        class: Application\AppBundle\Admin\ParamTypeAdmin
+        arguments: [~, Application\AppBundle\Entity\ParamType, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: ParamType}

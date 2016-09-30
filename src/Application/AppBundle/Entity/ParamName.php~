@@ -71,31 +71,4 @@ class ParamName
     {
         return $this->name;
     }
-
-    /**
-     * Set paramType
-     *
-     * @param \Application\AppBundle\Entity\ParamType $paramType
-     * @return ParamName
-     */
-    public function setParamType(\Application\AppBundle\Entity\ParamType $paramType = null)
-    {
-        $this->paramType = $paramType;
-
-        return $this;
-    }
-
-    /**
-     * Get paramType
-     *
-     * @return \Application\AppBundle\Entity\ParamType
-     */
-    public function getParamType()
-    {
-        return $this->paramType;
-    }
-
-    public function __toString(){
-      return $this->name;
-    }
 }

@@ -8,7 +8,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class ParamNameAdmin extends Admin
+class ParamTypeAdmin extends Admin
 {
     /**
      * @param DatagridMapper $datagridMapper
@@ -45,8 +45,16 @@ class ParamNameAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-        ->add('translations', 'a2lix_translations')
             ->add('name')
+            ->add('paramNames', 'sonata_type_collection', array(
+              'by_reference'=>false
+            ),
+                array(
+                    'edit' => 'inline',
+                    'inline' => 'table',
+                    'sortable' => 'position',
+                )
+            )
         ;
     }
 
@@ -58,6 +66,7 @@ class ParamNameAdmin extends Admin
         $showMapper
             ->add('id')
             ->add('name')
+            ->add('paramNames')
         ;
     }
 }

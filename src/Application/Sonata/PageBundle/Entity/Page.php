@@ -37,4 +37,83 @@ class Page extends BasePage
     {
         return $this->id;
     }
+
+    /**
+     * Add children
+     *
+     * @param \Application\Sonata\PageBundle\Entity\Page $children
+     * @return Page
+     */
+    public function addChild(\Application\Sonata\PageBundle\Entity\Page $children)
+    {
+        $this->children[] = $children;
+
+        return $this;
+    }
+
+    /**
+     * Remove children
+     *
+     * @param \Application\Sonata\PageBundle\Entity\Page $children
+     */
+    public function removeChild(\Application\Sonata\PageBundle\Entity\Page $children)
+    {
+        $this->children->removeElement($children);
+    }
+
+    /**
+     * Add blocks
+     *
+     * @param \Application\Sonata\PageBundle\Entity\Block $blocks
+     * @return Page
+     */
+    public function addBlock(\Application\Sonata\PageBundle\Entity\Block $blocks)
+    {
+        $this->blocks[] = $blocks;
+
+        return $this;
+    }
+
+    /**
+     * Remove blocks
+     *
+     * @param \Application\Sonata\PageBundle\Entity\Block $blocks
+     */
+    public function removeBlock(\Application\Sonata\PageBundle\Entity\Block $blocks)
+    {
+        $this->blocks->removeElement($blocks);
+    }
+
+    /**
+     * Add sources
+     *
+     * @param \Application\Sonata\PageBundle\Entity\Page $sources
+     * @return Page
+     */
+    public function addSource(\Application\Sonata\PageBundle\Entity\Page $sources)
+    {
+        $this->sources[] = $sources;
+
+        return $this;
+    }
+
+    /**
+     * Remove sources
+     *
+     * @param \Application\Sonata\PageBundle\Entity\Page $sources
+     */
+    public function removeSource(\Application\Sonata\PageBundle\Entity\Page $sources)
+    {
+        $this->sources->removeElement($sources);
+    }
+
+    /**
+     * Get sources
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSources()
+    {
+        return $this->sources;
+    }
 }

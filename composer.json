@@ -75,7 +75,8 @@
         "stephpy/TimelineBundle": "~2.0@dev",
         "stephpy/timeline": "~1.0@dev",
 
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "a2lix/translation-form-bundle": "^2.1"
     },
 
     "require-dev": {
